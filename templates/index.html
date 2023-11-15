@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h2>Buy Predictor : From Social Network Ad </h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="salary" placeholder="Salary" required="required" />
+		<input type="text" name="age" placeholder="Age" required="required" />
+		<input type="text" name="male" placeholder="Sex" required="required" /> 
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+<style>
+*{
+  font-family: sans-serif;
+  background-color: rgb(203, 186, 203);
+  
+
+}
+form input, form textarea{
+    border: 0;
+    outline: none;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: blanchedalmond;
+    
+
+}
+form button{
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: blanchedalmond;
+  border-radius: 6px;
+  margin: 15px;
+}
+
+form button:hover{
+  padding: 10px;
+  background-color:bisque;
+  
+}
+</style>
+
+</body>
+</html>
